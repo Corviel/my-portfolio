@@ -11,7 +11,7 @@ export default function Header() {
 
                 <nav>
                     <ul>
-                        <li><Link href="writing">Writing</Link></li>
+                        <li>Writing</li>
                         <li><Link href="" className="contact">Let&apos;s talk!</Link></li>
                     </ul>
                 </nav>
