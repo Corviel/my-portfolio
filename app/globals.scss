@@ -106,6 +106,7 @@ body {
   margin: 0 auto;
   @include media('<phone') {
     max-width: 100%;
+    padding: 0 1rem;
   }
   @include media('>=phone') {
     max-width: 540px;
@@ -138,6 +139,26 @@ header {
     a {
       text-decoration: none;
       color: black;
+      transition: 150ms all ease-in-out;
+
+      &:hover {
+        background-color: black;
+        color: white;
+      }
+    }
+
+    .writing {
+      position: relative;
+      text-decoration: line-through;
+      &::after {
+        position: absolute;
+        content: 'Soon';
+        top: 1.125rem;
+        left: 50%;
+        translate: -50%;
+        font-size: .75rem;
+        text-transform: uppercase;
+      }
     }
     
     .contact {
@@ -153,12 +174,14 @@ header {
 
   h1 {
     margin-bottom: 1rem;
-    font-size: 3rem;
+    font-size: clamp(1.5rem, calc(2vw + 1rem), 3rem);
     font-weight: 800;
+    text-align: center;
+
   }
 
   p {
-    font-size: 1.5rem;
+    font-size: clamp(1.125rem, calc(1vw + 1rem), 1.5rem);
     margin-bottom: 2.5rem;
   }
 
@@ -178,7 +201,7 @@ header {
 
   h2 {
     color: white;
-    font-size: 2rem;
+    font-size: clamp(1.5rem, calc(2vw + 1rem), 2rem);
     font-weight: 700;
     margin-bottom: 2rem;
   }
@@ -200,6 +223,10 @@ header {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 
+    @include media('<desktop') {
+      grid-template-columns: 1fr;
+    }
+
     .card {
       background-color: #f7f7f7;
       width: 100%;
@@ -207,26 +234,42 @@ header {
       padding: 2rem 2rem;
       box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.075);
 
+      @include media('<desktop') {
+        max-width: 600px;
+        justify-self: center;
+      }
+
       &:nth-of-type(1) {
-        border-top: 1px solid rgb(55, 46, 65, 0.25);
-        border-left: 1px solid rgb(55, 46, 65, 0.25);
-        border-bottom: 1px solid rgb(55, 46, 65, 0.25);
+        border: 1px solid rgb(55, 46, 65, 0.25);
         border-top-left-radius: 20px;
-        border-bottom-left-radius: 20px;
+        border-top-right-radius: 20px;
+        
+        @include media('>desktop') {
+          border-right: none;
+          border-top-right-radius: 0;
+          border-bottom-left-radius: 20px;
+        }
       }
       
       &:nth-of-type(2) {
         border-left: 1px solid rgb(55, 46, 65, 0.25);
         border-right: 1px solid rgb(55, 46, 65, 0.25);
-        border-bottom: 1px solid rgb(55, 46, 65, 0.25);
+        
+        @include media('>desktop') {
+          border-bottom: 1px solid rgb(55, 46, 65, 0.25);
+        }
       }
       
       &:nth-of-type(3) {
-        border-top: 1px solid rgb(55, 46, 65, 0.25);
-        border-right: 1px solid rgb(55, 46, 65, 0.25);
-        border-bottom: 1px solid rgb(55, 46, 65, 0.25);
-        border-top-right-radius: 20px;
+        border: 1px solid rgb(55, 46, 65, 0.25);
         border-bottom-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+
+        @include media('>desktop') {
+          border-top-right-radius: 20px;
+          border-bottom-right-radius: 20px;
+          border-bottom-left-radius: 0;
+        }
       }
 
       .icon {
@@ -284,6 +327,14 @@ header {
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
     margin-bottom: 2rem;
+
+    @include media('<desktop') {
+      grid-template-columns: 1fr 1fr;
+
+      @include media('<tablet') {
+        grid-template-columns: 1fr;
+      }
+    }
 
     .box {
       display: grid;
@@ -377,7 +428,7 @@ header {
     color: white;
   }
   
-  .container {
+  .slim {
     padding: 4rem 2rem;
     border-radius: 1rem;
     background-color: #141c3a;
@@ -385,6 +436,10 @@ header {
     justify-content: space-around;
     align-items: center;
     box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.15);
+    @include media('<desktop') {
+      flex-direction: column;
+      row-gap: 2rem;
+    }
 
     h2 {
       font-size: 2rem;
@@ -397,10 +452,45 @@ header {
     }
 
     a {
-      display: block;
-      border: 2px solid white;
-      border-radius: 2rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       padding: 0.5rem 2rem;
+      border: 2px solid #5be9b9;
+      border-radius: 2rem;
+      text-decoration: none;
+      text-align: center;
+      font-size: 1.25rem;
+      transition: 200ms all ease-in-out;
+
+      .icon {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        
+        width: 30px;
+        height: 30px;
+        margin-left: -10px;
+        margin-right: 5px;
+
+        svg {
+          height: 20px;
+          path {
+            transition: 200ms all ease-in-out;
+          }
+        }
+      }
+
+      &:hover {
+        background-color: #5be9b9;
+        color: #141c3a;
+
+        svg  {
+          path {
+            fill: #141c3a;
+          }
+        }
+      }
     }
   }
 }
