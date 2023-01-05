@@ -114,7 +114,7 @@ export default function HomePage() {
               imageAlt="Person buying online"
               icon="shopping"
               iconAlt="Shopping cart"
-              text="E-commerce app"
+              text="E-commerce app for studying complex global states using context and reducers"
               href="https://e-commerce-mu-khaki.vercel.app/#/"
             />
             <ProjectCard
@@ -123,7 +123,7 @@ export default function HomePage() {
               icon="crypto"
               iconAlt="Crypto coin icon"
               text="Crypto Currency Viewer using react-query for fetching and
-                  revaluating data."
+                  re-evaluating data."
               href="https://corviel.github.io/crypto-project/"
             />
             <ProjectCard
@@ -131,8 +131,8 @@ export default function HomePage() {
               imageAlt="Pokeball on top of cards"
               icon="pokemon"
               iconAlt="Pokeball icon"
-              text="Pokedex app collab with a friend for studies"
-              href="/"
+              text="Pokedex app with SSR, server-side fetchs, loading and error pages"
+              href="https://pokedex-o5oqqwgcf-corviel.vercel.app/"
             />
           </div>
 
