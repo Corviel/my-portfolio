@@ -1,4 +1,5 @@
-import FullPost from "../../../components/molecules/FullPost"
+import Link from "next/link"
+import FullPost from "../../../components/organisms/FullPost"
 import markdownToHtml, { getPostBySlug } from "../../../lib/api"
 
 type Params = {
@@ -21,7 +22,11 @@ export default async function Post({ params }: Params) {
 
   return (
     <main className="container mx-auto">
-      <article className="mb-32 grid grid-cols-2 gap-x-8">
+      <div className="underline text-xl text-end">
+        <Link href="/writing">BACK</Link>
+      </div>
+
+      <article className="mt-4 mb-32 lg:grid grid-cols-2 gap-x-8">
         <FullPost
           title={post.title}
           coverImage={post.coverImage}

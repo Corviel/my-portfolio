@@ -3,7 +3,7 @@ import Link from "next/link"
 
 export default function Header() {
   return (
-    <header className="p-8 mb-12">
+    <header className="py-8 mb-12">
       <div className="container mx-auto flex justify-between items-center">
         <Link href="/">
           <Image

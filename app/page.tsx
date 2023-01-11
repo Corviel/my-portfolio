@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import Image from "next/image"
-import ProjectCard from "../components/molecules/ProjectCard"
-import Skill from "../components/molecules/Skill"
+import ProjectCard from "../components/atoms/ProjectCard"
+import Skill from "../components/atoms/Skill"
 
 export default function HomePage() {
   return (
