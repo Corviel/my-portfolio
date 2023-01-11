@@ -16,10 +16,11 @@ export default function Skill(Props: SkillProps) {
       className={`bg-[#f7f7f7] w-full p-8 px-12 max-xl:max-w-2xl justify-self-center xl:shadow-card ${Props.additionalClasses}`}
     >
       <img
-        className="mb-2 mx-auto"
+        className="my-8 mx-auto"
         src={`${Props.image}.svg`}
-        alt="Icon of paint brush"
-        width={72}
+        alt={`Icon representing said skill`}
+        width={64}
+        height={64}
       />
       <h3 className="text-xl font-medium mb-4">{Props.title}</h3>
       <p className="font-medium mb-12">{Props.description}</p>

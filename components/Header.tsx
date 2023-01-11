@@ -7,7 +7,7 @@ export default function Header() {
       <div className="container mx-auto flex justify-between items-center">
         <Link href="/">
           <Image
-            src="/letter-c.png"
+            src="/logo.svg"
             alt="A logo with the C letter"
             width={64}
             height={64}
@@ -16,8 +16,8 @@ export default function Header() {
 
         <nav>
           <ul className="flex items-center text-lg list-none gap-x-4">
-            <li className="relative line-through after:text-xs after:content-['Soon'] after:absolute after:top-5 after:left-1/2 after:-translate-x-1/2 after:uppercase">
-              Writing
+            <li className="hover:underline">
+              <Link href="/writing">Writing</Link>
             </li>
             <li>
               <Link
