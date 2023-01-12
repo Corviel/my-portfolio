@@ -22,7 +22,7 @@ export default async function PostsPage() {
 
   return (
     <main className="container mx-auto mb-8">
-      <h1 className="text-4xl mb-12">Welcome to my blog!</h1>
+      <h1 className="text-4xl mb-4">Welcome to my blog!</h1>
       <section className="xl:grid xl:grid-cols-12 gap-8">
         {heroPost && (
           <HeroPost

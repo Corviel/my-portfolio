@@ -9,8 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@tiptap/react": "^2.0.0-beta.209",
-    "@tiptap/starter-kit": "^2.0.0-beta.209",
     "@types/node": "18.11.9",
     "@types/react": "18.0.25",
     "@types/react-dom": "18.0.9",

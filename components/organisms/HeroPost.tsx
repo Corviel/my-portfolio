@@ -22,7 +22,7 @@ const HeroPost = ({
 }: Props) => {
   return (
     <article className="col-span-8 sm:grid grid-cols-1 [&>*]:col-span-full [&>*]:row-span-full place-items-center sm:text-white max-xl:mb-12">
-      <div className="max-sm:mb-4 sm:brightness-50 sm:-z-10">
+      <div className="max-sm:mb-4 sm:brightness-50 sm:-z-10 w-full h-full">
         <CoverImage title={title} src={coverImage} slug={slug} />
       </div>
       <div className="sm:px-8 xl:px-24">
@@ -36,17 +36,17 @@ const HeroPost = ({
           </Link>
         </h2>
         <div className="mb-2 sm:mb-4 max-sm:text-gray-500 text-lg">{date}</div>
-        <p className="text-lg leading-relaxed mb-4">
-          {excerpt.substring(0, 150)}...{" "}
+        <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
+        <div className="flex max-[340px]:flex-col items-start max-[340px]:gap-y-4 min-[340px]:items-center gap-x-8">
+          <Avatar name={author.name} picture={author.picture} />
           <Link
             as={`/writing/${slug}`}
             href="/writing/[slug]"
-            className="underline"
+            className="hover:underline border-2 border-black sm:border-white px-4 py-2"
           >
-            Read more
+            See the post
           </Link>
-        </p>
-        <Avatar name={author.name} picture={author.picture} />
+        </div>
       </div>
     </article>
   )

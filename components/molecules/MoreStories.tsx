@@ -7,7 +7,7 @@ type Props = {
 
 const MoreStories = ({ posts }: Props) => {
   return (
-    <aside className="col-span-4">
+    <aside className="col-span-4 relative">
       <h2 className="mb-8 text-3xl md:text-5xl font-bold tracking-tighter leading-tight">
         More writing
       </h2>
